@@ -5,8 +5,13 @@ import axios from "axios";
 import { SingleProduct } from "./components/SingleProduct.jsx";
 
 function App() {
-  const [productDetails, setProductDetails] = useState(null);
+   const [productDetails, setProductDetails] = useState(null);
+  const [searchInput, setSearchInput] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+
   const categories = productDetails?.map(item => item.category)
+
 
   const category = new Set(categories)
 
@@ -18,14 +23,26 @@ function App() {
     fetchDetails().then((res) => setProductDetails(res.data.products));
   }, []);
 
-  const productListing = productDetails?.map((item) => (
+  
+  
+  const filteredProducts = productDetails?.filter((item) => {
+    const includesSearchInput = item.title.toLowerCase().includes(searchInput.toLowerCase());
+    
+    const matchesCategory = selectedCategory === "All" || item.category === selectedCategory;
+    
+    return includesSearchInput && matchesCategory;
+  });
+  
+  const productListing = filteredProducts?.map((item) => (
     <SingleProduct product={item} />
   ));
-
-  
   return (
     <div className="App">
-      <Header category ={category}/>
+      <Header category ={category}
+      searchInput={searchInput}
+      setSearchInput={setSearchInput}
+      selectedCategory={selectedCategory}
+      setSelectedCategory={setSelectedCategory}/>
       <div id="productContainer">{productListing}</div>
     </div>
   );
