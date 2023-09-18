@@ -43,7 +43,7 @@ function App() {
       setSearchInput={setSearchInput}
       selectedCategory={selectedCategory}
       setSelectedCategory={setSelectedCategory}/>
-      <div id="productContainer">{productListing}</div>
+      <div id="productContainer">{productListing} <span id="noItemsText">{!productListing?.length && "No items Available"}</span></div>
     </div>
   );
 }

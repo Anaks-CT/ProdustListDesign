@@ -53,6 +53,10 @@
 
 }
 
+#noItemsText {
+  padding: 5rem;
+}
+
 #oldAmount {
   text-decoration: line-through;
   color: grey;
@@ -88,7 +92,7 @@ h4 {
   bottom: 12px;
   left: 15px;
   padding: 0.1rem;
-  background-color: rgba(255, 255, 255, 0.5);;
+  background-color: rgba(255, 255, 255, 0.8);;
   width: 3rem;
   font-size: smaller;
   text-align: center;
