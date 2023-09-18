@@ -12,8 +12,8 @@ export const Header = ({ setSearchInput, selectedCategory, setSelectedCategory, 
     setSelectedCategory(e.target.value);
   };
   return (
-    <div id="headerContainer">
-      <input id="searchInput"
+    <div id="header-container">
+      <input id="search-input"
         type="search"
         placeholder="Search Product"
         value={searchInput}
