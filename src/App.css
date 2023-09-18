@@ -99,6 +99,7 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-top: 0.5rem;
 }
 
 #ProductOff{
@@ -109,6 +110,7 @@ h4 {
 #star{
   color: rgb(47, 165, 47);
   font-size: larger;
+  
 }
 
 
